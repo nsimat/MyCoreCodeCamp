@@ -7,8 +7,13 @@ using System.Threading.Tasks;
 
 namespace MyCoreCodeCamp.Repository
 {
-    public class CodeCampContext : DbContext
+    public class CodeCampDbContext : DbContext
     {
+        public CodeCampDbContext(DbContextOptions<CodeCampDbContext> options) : base(options)
+        {
+
+        }
+
         public DbSet<Camp> Camps { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<Talk> Talks { get; set; }
